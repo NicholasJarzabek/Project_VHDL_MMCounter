@@ -4,7 +4,7 @@
 # O Projektu
 ## Blokove schema
 https://canva.link/08267sm0rk5t5ha
-## VYSTUPY
+## Vstupy a vystupy
 - `SW` -
 - `clk` - 
 - `BTNC` -
