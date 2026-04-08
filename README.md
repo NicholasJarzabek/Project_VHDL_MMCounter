@@ -8,7 +8,7 @@
 - `SW` -
 - `clk` - 
 - `BTNC` -
-- `BTNR -
+- `BTNR` -
 - `AN` -
 - `SEG` -
 - `LED` -
