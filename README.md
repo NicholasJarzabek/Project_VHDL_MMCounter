@@ -3,7 +3,7 @@
 
 # O Projektu
 ## Blokove schema
-
+https://www.canva.com/design/DAHGRN5WdG4/87V7OxhluBIdHzGd8_LZmw/edit
 ## VYSTUPY
 - `SW` -
 - `clk` - 
