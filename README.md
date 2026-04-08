@@ -5,11 +5,11 @@
 ## Blokove schema
 
 ## VYSTUPY
-SW -
-clk - 
-BTNC -
-BTNR -
-AN -
-SEG -
-LED -
-DP -
+- `SW` -
+- `clk` - 
+- `BTNC` -
+- `BTNR -
+- `AN` -
+- `SEG` -
+- `LED` -
+- `DP` -
