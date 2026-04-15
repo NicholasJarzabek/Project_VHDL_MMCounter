@@ -2,85 +2,182 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
-
-
 entity MMCounter is
-    Port ( 
-           SW        : in STD_LOGIC_VECTOR (15 downto 0);
-           clk       : in STD_LOGIC;
-           BTNC      : in STD_LOGIC;
-           BTNR      : in STD_LOGIC;
-           AN        : out STD_LOGIC_VECTOR (7 downto 0);
-           SEG       : out STD_LOGIC_VECTOR (6 downto 0);
-           LED       : out STD_LOGIC_VECTOR (15 downto 0);
-           DP        : out STD_LOGIC
-           );
+    Port (
+        SW   : in  STD_LOGIC_VECTOR (15 downto 0);
+        clk  : in  STD_LOGIC;
+        BTNC : in  STD_LOGIC;
+        BTNR : in  STD_LOGIC;
+        AN   : out STD_LOGIC_VECTOR (7 downto 0);
+        SEG  : out STD_LOGIC_VECTOR (6 downto 0);
+        LED  : out STD_LOGIC_VECTOR (15 downto 0);
+        DP   : out STD_LOGIC
+    );
 end MMCounter;
 
 architecture Behavioral of MMCounter is
 
     component debounce
-            port (
-                clk       : in STD_LOGIC;
-                rst       : in STD_LOGIC;
-                btn_in    : in STD_LOGIC;
-                btn_state : out STD_LOGIC;
-                btn_press : out STD_LOGIC
-                );
-    end component;
-    
-    component counter
-            generic ( G_BITS : positive := 3 );
-            
-        
-            port (
-                clk : in  std_logic;                             
-                rst : in  std_logic;                             
-                en  : in  std_logic;                             
-                cnt : out std_logic_vector(G_BITS - 1 downto 0)  
-                );
-    end component;
-    
-    component display_driver
-            port (
-                clk   : in STD_LOGIC;
-                rst   : in STD_LOGIC;
-                data  : in STD_LOGIC_VECTOR (7 downto 0);
-                seg   : out STD_LOGIC_VECTOR (6 downto 0);
-                anode : out STD_LOGIC_VECTOR (1 downto 0)
-                );
-    end component;
-    
-        signal rst_clean    : STD_LOGIC;
-        signal step_clean   : STD_LOGIC;
-        signal mode         : STD_LOGIC_VECTOR(1 downto 0);
-        signal direction    : STD_LOGIC;
-        signal count_val    : STD_LOGIC_VECTOR(15 downto 0);
-        signal seg_data_reg : STD_LOGIC_VECTOR(31 downto 0);
-        
-        constant MODE_DECIMAL : STD_LOGIC_VECTOR(1 downto 0) := "00";
-        constant MODE_HEX     : STD_LOGIC_VECTOR(1 downto 0) := "01";
-        constant MODE_SCROLL  : STD_LOGIC_VECTOR(1 downto 0) := "10";
-begin
-     mode      <= SW (1 downto 0);
-     direction <= SW (2);
- 
-     DP                <= '1';
-     LED (1 downto 0)  <= mode;
-     LED (2)           <= direction;
-     LED (15 downto 3) <= (others => '0');
-  
-    counter_0: counter
-        generic map (G_BITS => 1)
-        
-        port map (
-        clk       =>  clk,
-        rst       =>  rst_clean,
-        MODE      =>  mode,
-        dir       =>  direction,
-        step      =>  step_clean,
-        count_out =>  count_val
-        
+        port (
+            clk       : in  STD_LOGIC;
+            rst       : in  STD_LOGIC;
+            btn_in    : in  STD_LOGIC;
+            btn_state : out STD_LOGIC;
+            btn_press : out STD_LOGIC
         );
-    
+    end component;
+
+    component clk_en
+        generic (
+            G_MAX : positive := 5
+        );
+        port (
+            clk : in  STD_LOGIC;
+            rst : in  STD_LOGIC;
+            ce  : out STD_LOGIC
+        );
+    end component;
+
+    component display_driver
+        port (
+            clk   : in  STD_LOGIC;
+            rst   : in  STD_LOGIC;
+            data  : in  STD_LOGIC_VECTOR (7 downto 0);
+            seg   : out STD_LOGIC_VECTOR (6 downto 0);
+            anode : out STD_LOGIC_VECTOR (1 downto 0)
+        );
+    end component;
+
+    signal rst_state   : STD_LOGIC;
+    signal rst_press   : STD_LOGIC;
+    signal mode_state  : STD_LOGIC;
+    signal mode_press  : STD_LOGIC;
+
+    signal sig_enable  : STD_LOGIC;
+    signal sig_dir     : STD_LOGIC;
+    signal sig_tick    : STD_LOGIC;
+
+    signal count_val   : unsigned(15 downto 0) := (others => '0');
+    signal mode_reg    : unsigned(1 downto 0)  := "00";
+
+    signal disp_data   : STD_LOGIC_VECTOR(7 downto 0) := (others => '0');
+    signal anode_2dig  : STD_LOGIC_VECTOR(1 downto 0);
+
+    constant MODE_DECIMAL : unsigned(1 downto 0) := "00";
+    constant MODE_HEX     : unsigned(1 downto 0) := "01";
+    constant MODE_SCROLL  : unsigned(1 downto 0) := "10";
+
+begin
+
+    sig_enable <= SW(0);
+    sig_dir    <= SW(1);
+
+    DP <= '1';
+
+    LED(15 downto 2) <= STD_LOGIC_VECTOR(count_val(15 downto 2));
+    LED(1 downto 0)  <= STD_LOGIC_VECTOR(mode_reg);
+
+    DEBOUNCE_RST : debounce
+        port map (
+            clk       => clk,
+            rst       => '0',
+            btn_in    => BTNC,
+            btn_state => rst_state,
+            btn_press => rst_press
+        );
+
+    DEBOUNCE_MODE : debounce
+        port map (
+            clk       => clk,
+            rst       => '0',
+            btn_in    => BTNR,
+            btn_state => mode_state,
+            btn_press => mode_press
+        );
+
+    TICK_GEN : clk_en
+        generic map (
+            G_MAX => 10000000
+        )
+        port map (
+            clk => clk,
+            rst => rst_state,
+            ce  => sig_tick
+        );
+
+    p_mode_control : process(clk)
+    begin
+        if rising_edge(clk) then
+            if rst_state = '1' then
+                mode_reg <= MODE_DECIMAL;
+            elsif mode_press = '1' then
+                if mode_reg = MODE_SCROLL then
+                    mode_reg <= MODE_DECIMAL;
+                else
+                    mode_reg <= mode_reg + 1;
+                end if;
+            end if;
+        end if;
+    end process;
+
+    p_counter : process(clk)
+    begin
+        if rising_edge(clk) then
+            if rst_state = '1' then
+                count_val <= (others => '0');
+            elsif sig_tick = '1' and sig_enable = '1' then
+                if sig_dir = '0' then
+                    count_val <= count_val + 1;
+                else
+                    count_val <= count_val - 1;
+                end if;
+            end if;
+        end if;
+    end process;
+
+    p_display_data : process(count_val, mode_reg)
+        variable tmp_int  : integer range 0 to 255;
+        variable tens_d   : integer range 0 to 9;
+        variable ones_d   : integer range 0 to 9;
+        variable low_b    : unsigned(7 downto 0);
+        variable scroll_s : STD_LOGIC_VECTOR(7 downto 0);
+    begin
+        low_b := count_val(7 downto 0);
+
+        case mode_reg is
+            when MODE_DECIMAL =>
+                tmp_int := to_integer(low_b) mod 100;
+                tens_d  := tmp_int / 10;
+                ones_d  := tmp_int mod 10;
+
+                disp_data(7 downto 4) <= std_logic_vector(to_unsigned(tens_d, 4));
+                disp_data(3 downto 0) <= std_logic_vector(to_unsigned(ones_d, 4));
+
+            when MODE_HEX =>
+                disp_data <= std_logic_vector(low_b);
+
+            when MODE_SCROLL =>
+                if count_val(4) = '0' then
+                    scroll_s := x"A1";
+                else
+                    scroll_s := x"1A";
+                end if;
+                disp_data <= scroll_s;
+
+            when others =>
+                disp_data <= (others => '0');
+        end case;
+    end process;
+
+    DISPLAY_INST : display_driver
+        port map (
+            clk   => clk,
+            rst   => rst_state,
+            data  => disp_data,
+            seg   => SEG,
+            anode => anode_2dig
+        );
+
+    AN <= "111111" & anode_2dig;
+
 end Behavioral;
