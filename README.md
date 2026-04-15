@@ -30,3 +30,9 @@ display driver
 - `SEG` -  segmentovka (které části segmentů svítí/nesvítí)
 - `LED` - ledka (svítí/nesvítí)
 - `DP` - desetinná tečka (svítí/nesvítí)
+
+#Importovane Subory
+-clk_en.vhd
+-counter.vhd
+-debounce.vhd
+-display_driver.vhd
