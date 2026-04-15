@@ -5,11 +5,11 @@
 ## Blokove schema
 https://canva.link/08267sm0rk5t5ha
 ## Vstupy a vystupy
-- `SW` -
-- `clk` - 
-- `BTNC` -
-- `BTNR` -
-- `AN` -
-- `SEG` -
-- `LED` -
-- `DP` -
+- `SW` - switch (přepínače)
+- `clk` - hodinový signál 
+- `BTNC` - tlačítko čítače (counteru)
+- `BTNR` - reset tlačítko 
+- `AN` - anoda
+- `SEG` - segmenty segmentovky
+- `LED` - ledka
+- `DP` - desetinná tečka 
