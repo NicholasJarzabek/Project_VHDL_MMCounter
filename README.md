@@ -32,7 +32,7 @@ display driver
 - `DP` - desetinná tečka (svítí/nesvítí)
 
 ## Importovane Subory
--clk_en.vhd
--counter.vhd
--debounce.vhd
--display_driver.vhd
+- clk_en.vhd
+- counter.vhd
+- debounce.vhd
+- display_driver.vhd
