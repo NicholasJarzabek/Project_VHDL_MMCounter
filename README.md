@@ -31,7 +31,7 @@ display driver
 - `LED` - ledka (svítí/nesvítí)
 - `DP` - desetinná tečka (svítí/nesvítí)
 
-#Importovane Subory
+## Importovane Subory
 -clk_en.vhd
 -counter.vhd
 -debounce.vhd
