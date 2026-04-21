@@ -20,7 +20,8 @@ display driver
 - přepíná mezi řády (10 vs 1)
 
 ## Blokove schema
-- Blokove schema bude přidano během dne z duvodu předělavaní
+- <img width="1687" height="533" alt="image" src="https://github.com/user-attachments/assets/8e803b31-1f7a-4ff5-af16-d0e47a046421" />
+
 ## Vstupy a vystupy
 - `SW` - switch  (ovládání displeje)
 - `clk` - hodinový signál  (100 Mhz)
