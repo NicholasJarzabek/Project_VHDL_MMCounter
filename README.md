@@ -23,10 +23,11 @@ display driver
 - <img width="1687" height="533" alt="image" src="https://github.com/user-attachments/assets/8e803b31-1f7a-4ff5-af16-d0e47a046421" />
 
 ## Vstupy a vystupy
-- `SW` - switch  (ovládání displeje)
+- `SW(0)` - zapnutí/vypnutí čítače
+- `SW(1)` - přepínač směru změny módů (nahoru, dolů)
 - `clk` - hodinový signál  (100 Mhz)
-- `BTNC` - tlačítko čítače (přepínání módů)
-- `BTNR` - reset tlačítko (resetuje counter = počítáme zase od 0)
+- `BTNC` - tlačítko čítače (reset)
+- `BTNR` - mění módy směrem určeným SW(1)
 - `AN` - anoda
 - `SEG` -  segmentovka (které části segmentů svítí/nesvítí)
 - `LED` - ledka (svítí/nesvítí)
