@@ -97,7 +97,7 @@ begin
 
     TICK_GEN : clk_en
         generic map (
-            G_MAX => 10
+            G_MAX => 100_000_000
         )
         port map (
             clk => clk,
