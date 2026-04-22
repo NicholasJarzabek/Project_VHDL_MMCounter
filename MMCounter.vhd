@@ -3,24 +3,21 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
 entity MMCounter is
-
-        Port (
-            SW   : in  STD_LOGIC_VECTOR (15 downto 0);
-            clk  : in  STD_LOGIC;
-            BTNC : in  STD_LOGIC;
-            BTNR : in  STD_LOGIC;
-            AN   : out STD_LOGIC_VECTOR (7 downto 0);
-            SEG  : out STD_LOGIC_VECTOR (6 downto 0);
-            LED  : out STD_LOGIC_VECTOR (15 downto 0);
-            DP   : out STD_LOGIC
-        );
-        
+    Port (
+        SW   : in  STD_LOGIC_VECTOR (15 downto 0);
+        clk  : in  STD_LOGIC;
+        BTNC : in  STD_LOGIC;
+        BTNR : in  STD_LOGIC;
+        AN   : out STD_LOGIC_VECTOR (7 downto 0);
+        SEG  : out STD_LOGIC_VECTOR (6 downto 0);
+        LED  : out STD_LOGIC_VECTOR (15 downto 0);
+        DP   : out STD_LOGIC
+    );
 end MMCounter;
 
 architecture Behavioral of MMCounter is
 
     component debounce
-    
         port (
             clk       : in  STD_LOGIC;
             rst       : in  STD_LOGIC;
@@ -28,25 +25,20 @@ architecture Behavioral of MMCounter is
             btn_state : out STD_LOGIC;
             btn_press : out STD_LOGIC
         );
-        
     end component;
 
     component clk_en
-    
         generic (
             G_MAX : positive := 5
         );
-        
         port (
             clk : in  STD_LOGIC;
             rst : in  STD_LOGIC;
             ce  : out STD_LOGIC
         );
-        
     end component;
-            
+
     component display_driver
-    
         port (
             clk   : in  STD_LOGIC;
             rst   : in  STD_LOGIC;
@@ -54,7 +46,6 @@ architecture Behavioral of MMCounter is
             seg   : out STD_LOGIC_VECTOR (6 downto 0);
             anode : out STD_LOGIC_VECTOR (1 downto 0)
         );
-        
     end component;
 
     signal rst_state      : STD_LOGIC;
@@ -78,16 +69,16 @@ architecture Behavioral of MMCounter is
 
 begin
 
-    sig_enable        <= SW(0);
-    sig_dir           <= SW(1);
-                        
-    DP <= '1';          
-                        
-    LED(15 downto 2)  <= STD_LOGIC_VECTOR(count_val(15 downto 2));
-    LED(1 downto 0)   <= STD_LOGIC_VECTOR(mode_reg);
-                                                
+    sig_enable <= SW(0);
+    sig_dir    <= SW(1);
+
+    DP <= '1';
+
+    LED(15 downto 2) <= STD_LOGIC_VECTOR(count_val(15 downto 2));
+    LED(1 downto 0)  <= STD_LOGIC_VECTOR(mode_reg);
+
     DEBOUNCE_RST : debounce
-        port map (      
+        port map (
             clk       => clk,
             rst       => '0',
             btn_in    => BTNC,
@@ -96,7 +87,6 @@ begin
         );
 
     DEBOUNCE_MODE : debounce
-    
         port map (
             clk       => clk,
             rst       => '0',
@@ -106,11 +96,9 @@ begin
         );
 
     TICK_GEN : clk_en
-    
         generic map (
-            G_MAX => 10000000
+            G_MAX => 10
         )
-        
         port map (
             clk => clk,
             rst => rst_state,
@@ -118,12 +106,10 @@ begin
         );
 
     p_mode_control : process(clk)
-    
     begin
         if rising_edge(clk) then
             if rst_state = '1' then
                 mode_reg <= MODE_DECIMAL;
-                
             elsif mode_press = '1' then
                 if mode_reg = MODE_SCROLL then
                     mode_reg <= MODE_DECIMAL;
@@ -135,12 +121,10 @@ begin
     end process;
 
     p_counter : process(clk)
-    
     begin
         if rising_edge(clk) then
             if rst_state = '1' then
                 count_val <= (others => '0');
-                
             elsif sig_tick = '1' and sig_enable = '1' then
                 if sig_dir = '0' then
                     count_val <= count_val + 1;
@@ -152,15 +136,11 @@ begin
     end process;
 
     p_display_data : process(count_val, mode_reg)
-    
-        variable tmp_int  : integer range 0 to 255;
-        variable tens_d   : integer range 0 to 9;
-        variable ones_d   : integer range 0 to 9;
-        variable low_b    : unsigned(7 downto 0);
-        variable scroll_s : STD_LOGIC_VECTOR(7 downto 0);
-        
+        variable tmp_int : integer range 0 to 255;
+        variable tens_d  : integer range 0 to 9;
+        variable ones_d  : integer range 0 to 9;
+        variable low_b   : unsigned(7 downto 0);
     begin
-    
         low_b := count_val(7 downto 0);
 
         case mode_reg is
@@ -177,11 +157,10 @@ begin
 
             when MODE_SCROLL =>
                 if count_val(4) = '0' then
-                    scroll_s := x"A1";
+                    disp_data <= x"A1";
                 else
-                    scroll_s := x"1A";
+                    disp_data <= x"1A";
                 end if;
-                disp_data <= scroll_s;
 
             when others =>
                 disp_data <= (others => '0');
