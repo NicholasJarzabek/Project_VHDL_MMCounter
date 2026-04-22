@@ -7,7 +7,10 @@
 - counter přiřazuje vybraným switchům bin. hodnoty
 - bin2seg přiřazuje bin. hodnotám  hodnoty, které chceme zobrazit, dle vybraného módu (1,2,3...,A,B...,F, nebo text, což pro ten mód přiřadíme více písmen)
 
-- změna módů, tlačítkem BTNC přepínáme multiplexer mezi módem 0,1,2->0,1,2.
+- změna módů, tlačítkem BTNR přepínáme multiplexer mezi módem 0,1,2->0,1,2, případně opačným směrem)
+- sw(0) zapíná vypíná čítač.
+- sw(1) mění směr změny módů
+- BTNC reset čítače
 - mód 0 (hex) normálně zobrazujeme 0 až F
 - mód 1 (dec) výst. omezen na 0 až 9
 - mód 2 (text) Do displeje vchází pouze písmena, jejich "překlad" z clk_en signálu na písmena je v blocku counter v sekci "mod 2"
