@@ -35,6 +35,8 @@ display driver
 - `SEG` -  segmentovka (které části segmentů svítí/nesvítí)
 - `LED` - ledka (svítí/nesvítí)
 - `DP` - desetinná tečka (svítí/nesvítí)
+## Simulace
+<img width="1069" height="682" alt="image" src="https://github.com/user-attachments/assets/b38098e6-5195-41a0-a62f-1be5736d86ca" />
 
 ## Importovane Subory
 - clk_en.vhd
