@@ -37,10 +37,14 @@
 - `LED` - ledka (svítí/nesvítí)
 - `DP` - desetinná tečka (svítí/nesvítí)
 ## Simulace
-<img width="1069" height="682" alt="image" src="https://github.com/user-attachments/assets/b38098e6-5195-41a0-a62f-1be5736d86ca" />
+<img width="1069" height="682" alt="image" src="https://github.com/NicholasJarzabek/Project_VHDL_MMCounter/blob/main/IMGs/simulace.png" />
 
 ## Importovane Subory
 - clk_en.vhd
 - counter.vhd
 - debounce.vhd
 - display_driver.vhd
+
+## Napady na vylepšenie
+- zvyšenie rychlosti
+- manualne zadanie začiatočneho bitu pomocou switchov
