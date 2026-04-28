@@ -18,9 +18,9 @@
 
 
 
-bin2seg
+- bin2seg
 -dle módu  a vst. z clk_en určí, které části segmentovek budou zhasnuty a rozsvíceny
-display driver
+- display driver
 - přepíná mezi řády (10 vs 1)
 
 ## Blokove schema
