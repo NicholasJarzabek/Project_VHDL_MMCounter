@@ -18,10 +18,8 @@
 
 
 
-- bin2seg
--dle módu  a vst. z clk_en určí, které části segmentovek budou zhasnuty a rozsvíceny
-- display driver
-- přepíná mezi řády (10 vs 1)
+- `bin2seg` -dle módu  a vst. z clk_en určí, které části segmentovek budou zhasnuty a rozsvíceny
+- `display driver` - přepíná mezi řády (10 vs 1)
 
 ## Blokove schema
 - <img width="1687" height="533" alt="image" src="https://github.com/NicholasJarzabek/Project_VHDL_MMCounter/blob/main/IMGs/schema.png" />
