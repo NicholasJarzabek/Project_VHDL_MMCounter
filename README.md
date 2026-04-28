@@ -32,7 +32,7 @@
 ## Implemented Design
 ![Simulácia](IMGs/ImplementedDesign.png)
 
-## Vstupy a vystupy
+## Vstupy a vystupy   --pridať nove tlačítka 
 - `SW(0)` - zapnutí/vypnutí čítače
 - `SW(1)` - přepínač směru změny módů (nahoru, dolů)
 - `clk` - hodinový signál  (100 Mhz)
