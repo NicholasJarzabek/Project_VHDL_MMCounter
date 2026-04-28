@@ -37,6 +37,8 @@
 - `LED` - ledka (svítí/nesvítí)
 - `DP` - desetinná tečka (svítí/nesvítí)
 ## Simulace
+- `Simulace 1`
+- Pri tejto simulacii program pri nahrani na desku mal menšie vady
 <img width="1069" height="682" alt="image" src="https://github.com/NicholasJarzabek/Project_VHDL_MMCounter/blob/main/IMGs/simulace.png" />
 
 ## Importovane Subory
