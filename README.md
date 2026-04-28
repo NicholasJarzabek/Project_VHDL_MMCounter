@@ -26,6 +26,12 @@
 ## Blokove schema
 <img width="1687" height="533" alt="image" src="https://github.com/NicholasJarzabek/Project_VHDL_MMCounter/blob/main/IMGs/schema.png" />
 
+## Blokove schema generovane Vivadom
+![Simulácia](IMGs/schema_vivado.png)
+
+## Implemented Design
+![Simulácia](IMGs/ImplementedDesign.png)
+
 ## Vstupy a vystupy
 - `SW(0)` - zapnutí/vypnutí čítače
 - `SW(1)` - přepínač směru změny módů (nahoru, dolů)
