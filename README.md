@@ -3,9 +3,11 @@
 
 # O Projektu
 - projekt na základě přepínačů, zobrazuje na displeji hodnoty/text dle vybraného módu.
-- debounce umožňuje spolehlivé stisknutí tlačítka (zákmity ignorovány)
-- counter přiřazuje vybraným switchům bin. hodnoty
-- bin2seg přiřazuje bin. hodnotám  hodnoty, které chceme zobrazit, dle vybraného módu (1,2,3...,A,B...,F, nebo text, což pro ten mód přiřadíme více písmen)
+- `debounce` - umožňuje spolehlivé stisknutí tlačítka (zákmity ignorovány)
+- `counter` - přiřazuje vybraným switchům bin. hodnoty
+- `bin2seg` - přiřazuje bin. hodnotám  hodnoty, které chceme zobrazit, dle vybraného módu (1,2,3...,A,B...,F, nebo text, což pro ten mód přiřadíme více písmen)
+- `bin2seg` - dle módu  a vst. z clk_en určí, které části segmentovek budou zhasnuty a rozsvíceny
+- `display driver` - přepíná mezi řády (10 vs 1)
 
 ## Popis funkčnosti tlačidiel 
 - změna módů, tlačítkem BTNR přepínáme multiplexer mezi módem 0,1,2->0,1,2, případně opačným směrem)
