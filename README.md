@@ -9,7 +9,7 @@
 - `bin2seg` - dle módu  a vst. z clk_en určí, které části segmentovek budou zhasnuty a rozsvíceny
 - `display driver` - přepíná mezi řády (10 vs 1)
 
-## Popis funkčnosti tlačidiel 
+## Popis funkčnosti tlačidiel *(bude sa ešte meniť)*
 - změna módů, tlačítkem BTNR přepínáme multiplexer mezi módem 0,1,2->0,1,2, případně opačným směrem)
 - sw(0) zapíná vypíná čítač.
 - sw(1) mění směr změny módů
