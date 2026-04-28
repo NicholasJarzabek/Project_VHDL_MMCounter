@@ -23,7 +23,7 @@ display driver
 - přepíná mezi řády (10 vs 1)
 
 ## Blokove schema
-- <img width="1687" height="533" alt="image" src="https://github.com/user-attachments/assets/8e803b31-1f7a-4ff5-af16-d0e47a046421" />
+- <img width="1687" height="533" alt="image" src="https://github.com/NicholasJarzabek/Project_VHDL_MMCounter/blob/main/IMGs/schema.png" />
 
 ## Vstupy a vystupy
 - `SW(0)` - zapnutí/vypnutí čítače
