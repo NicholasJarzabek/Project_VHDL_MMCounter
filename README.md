@@ -7,6 +7,7 @@
 - counter přiřazuje vybraným switchům bin. hodnoty
 - bin2seg přiřazuje bin. hodnotám  hodnoty, které chceme zobrazit, dle vybraného módu (1,2,3...,A,B...,F, nebo text, což pro ten mód přiřadíme více písmen)
 
+## Popis funkčnosti tlačidiel 
 - změna módů, tlačítkem BTNR přepínáme multiplexer mezi módem 0,1,2->0,1,2, případně opačným směrem)
 - sw(0) zapíná vypíná čítač.
 - sw(1) mění směr změny módů
