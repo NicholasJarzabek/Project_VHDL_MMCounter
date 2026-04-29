@@ -32,6 +32,12 @@
 ## Implemented Design
 ![Simulácia](IMGs/ImplementedDesign.png)
 
+## Simulace
+![Simulácia](IMGs/simulace.png)
+
+![Simulácia](IMGs/simulacia2.png)
+
+![Simulácia](IMGs/simulacia3.png)
 ## Vstupy a vystupy   --pridať nove tlačítka 
 - `SW(0)` - zapnutí/vypnutí čítače
 - `SW(1)` - přepínač směru změny módů (nahoru, dolů)
