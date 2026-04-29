@@ -64,4 +64,5 @@
 
 ## Reference
 - ChatGPT/Claude AI na omptimalizaci kodu a pomoc při potížích a implementaci kódu, když jsme nevědeli jak dal.
-  [Online VHDL Testbench Template Generator](https://vhdl.lapinoo.net/)
+- [Online VHDL Testbench Template Generator](https://vhdl.lapinoo.net/)
+- 
