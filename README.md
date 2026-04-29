@@ -1,6 +1,12 @@
 # Projekt 4: Multi-mode counter
 * Autors: Nicholas Jarzabek, Vaclav Javurek, David Kevely
-
+-[O projektu](./README.md#O-Projektu)
+-[Popis funkčnosti tlačidiel](./README.md#Popis-funkčnosti-tlačidiel)
+-[Blokove schema](./README.md#Blokove-schema)
+-[Blokove schema generovane Vivadom](./README.md#Blokove-schema-generovane-Vivadom)
+-[Implemented Design](./README.md#Implemented-design)
+-[Instalace](#instalace-projektu)
+-[Instalace](#instalace-projektu)
 # O Projektu
 - projekt na základě přepínačů, zobrazuje na displeji hodnoty/text dle vybraného módu.
 - `debounce` - umožňuje spolehlivé stisknutí tlačítka (zákmity ignorovány)
@@ -9,7 +15,7 @@
 - `bin2seg` - dle módu  a vst. z clk_en určí, které části segmentovek budou zhasnuty a rozsvíceny
 - `display driver` - přepíná mezi řády (10 vs 1)
 
-## Popis funkčnosti tlačidiel *(bude sa ešte meniť)*
+## Popis funkčnosti tlačidiel 
 - změna módů, tlačítkem BTNR přepínáme multiplexer mezi módem 0,1,2->0,1,2, případně opačným směrem)
 - sw(0) zapíná/vypíná čítač.
 - sw(1) mění směr změny módů
@@ -65,4 +71,4 @@
 ## Reference
 - ChatGPT/Claude AI na omptimalizaci kodu a pomoc při potížích a implementaci kódu, když jsme nevědeli jak dal.
 - [Online VHDL Testbench Template Generator](https://vhdl.lapinoo.net/)
-- 
+- [Nexys A7 Digilent Reference](https://digilent.com/reference/programmable-logic/nexys-a7/start)
