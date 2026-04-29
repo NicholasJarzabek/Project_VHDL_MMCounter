@@ -32,7 +32,7 @@
 ## Implemented Design
 ![Simulácia](IMGs/ImplementedDesign.png)
 
-## Simulace
+## Simulace (ještě bude dále upraveno)
 ![Simulácia](IMGs/simulace.png)
 
 ![Simulácia](IMGs/simulacia2.png)
