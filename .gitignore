@@ -1,0 +1,20 @@
+# 1. Vivado logs and journals
+*.jou
+*.log
+*.str
+*.pb
+*.vdi
+*.wdb
+
+# 2. Vivado generated folders
+.Xil/
+*.cache/
+*.hw/
+*.ip_user_files/
+*.runs/
+*.sim/
+*.hbs/
+
+# 3. System files (Windows/Mac)
+Thumbs.db
+.DS_Store
