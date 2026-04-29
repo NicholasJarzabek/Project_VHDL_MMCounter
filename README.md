@@ -11,7 +11,7 @@
 
 ## Popis funkčnosti tlačidiel *(bude sa ešte meniť)*
 - změna módů, tlačítkem BTNR přepínáme multiplexer mezi módem 0,1,2->0,1,2, případně opačným směrem)
-- sw(0) zapíná vypíná čítač.
+- sw(0) zapíná/vypíná čítač.
 - sw(1) mění směr změny módů
 - BTNC reset čítače
 - mód 0 (hex) normálně zobrazujeme 0 až F
@@ -38,6 +38,9 @@
 ![Simulácia](IMGs/simulacia2.png)
 
 ![Simulácia](IMGs/simulacia3.png)
+
+## Video (bude přidano)
+
 ## Vstupy a vystupy   --pridať nove tlačítka 
 - `SW(0)` - zapnutí/vypnutí čítače
 - `SW(1)` - přepínač směru změny módů (nahoru, dolů)
