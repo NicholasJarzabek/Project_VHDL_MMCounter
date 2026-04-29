@@ -1,12 +1,12 @@
 # Projekt 4: Multi-mode counter
 * Autors: Nicholas Jarzabek, Vaclav Javurek, David Kevely
--[O projektu](./README.md#O-Projektu)
--[Popis funkčnosti tlačidiel](./README.md#Popis-funkčnosti-tlačidiel)
--[Blokove schema](./README.md#Blokove-schema)
--[Blokove schema generovane Vivadom](./README.md#Blokove-schema-generovane-Vivadom)
--[Implemented Design](./README.md#Implemented-design)
--[Instalace](#instalace-projektu)
--[Instalace](#instalace-projektu)
+- [O projektu](./README.md#O-Projektu)
+- [Popis funkčnosti tlačidiel](./README.md#Popis-funkčnosti-tlačidiel)
+- [Blokove schema](./README.md#Blokove-schema)
+- [Blokove schema generovane Vivadom](./README.md#Blokove-schema-generovane-Vivadom)
+- [Implemented Design](./README.md#Implemented-design)
+- [Instalace](#instalace-projektu)
+- [Instalace](#instalace-projektu)
 # O Projektu
 - projekt na základě přepínačů, zobrazuje na displeji hodnoty/text dle vybraného módu.
 - `debounce` - umožňuje spolehlivé stisknutí tlačítka (zákmity ignorovány)
