@@ -5,8 +5,11 @@
 - [Blokove schema](./README.md#Blokove-schema)
 - [Blokove schema generovane Vivadom](./README.md#Blokove-schema-generovane-Vivadom)
 - [Implemented Design](./README.md#Implemented-design)
-- [Instalace](#instalace-projektu)
-- [Instalace](#instalace-projektu)
+- [Simulace](./README.md#Simulace)
+- [Video](./README.md#Video)
+- [Vstupy a vystupy](./README.md#Vstupy-a-vystupy)
+- [Importovane Subory](./README.md#Importovane-Subory)
+- [Reference](./README.md#Reference)
 # O Projektu
 - projekt na základě přepínačů, zobrazuje na displeji hodnoty/text dle vybraného módu.
 - `debounce` - umožňuje spolehlivé stisknutí tlačítka (zákmity ignorovány)
@@ -38,16 +41,16 @@
 ## Implemented Design
 ![Simulácia](IMGs/ImplementedDesign.png)
 
-## Simulace (ještě bude dále upraveno)
+## Simulace 
 ![Simulácia](IMGs/simulace.png)
 
 ![Simulácia](IMGs/simulacia2.png)
 
 ![Simulácia](IMGs/simulacia3.png)
 
-## Video (bude přidano)
+## Video 
 
-## Vstupy a vystupy   --pridať nove tlačítka 
+## Vstupy a vystupy   
 - `SW(0)` - zapnutí/vypnutí čítače
 - `SW(1)` - přepínač směru změny módů (nahoru, dolů)
 - `clk` - hodinový signál  (100 Mhz)
