@@ -61,3 +61,7 @@
 ## Napady na vylepšenie
 - zvyšenie rychlosti
 - manualne zadanie začiatočneho bitu pomocou switchov
+
+## Reference
+- ChatGPT/Claude AI na omptimalizaci kodu a pomoc při potížích a implementaci kódu, když jsme nevědeli jak dal.
+  [Online VHDL Testbench Template Generator](https://vhdl.lapinoo.net/)
