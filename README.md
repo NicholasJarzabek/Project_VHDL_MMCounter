@@ -33,6 +33,7 @@
 - `display driver` - přepíná mezi řády (10 vs 1)
 
 ## Blokove schema
+- [Projekt 4: Multi-mode counter](./README.md#O-Projet-4:-Multi-mode-counter)
 <img width="1687" height="533" alt="image" src="https://github.com/NicholasJarzabek/Project_VHDL_MMCounter/blob/main/IMGs/schema.png" />
 
 ## Blokove schema generovane Vivadom
