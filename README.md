@@ -34,15 +34,20 @@
 
 ## Blokove schema
 - [Projekt 4: Multi-mode counter](./README.md#O-Projet-4:-Multi-mode-counter)
+  
 <img width="1687" height="533" alt="image" src="https://github.com/NicholasJarzabek/Project_VHDL_MMCounter/blob/main/IMGs/schema.png" />
 
 ## Blokove schema generovane Vivadom
+- [Projekt 4: Multi-mode counter](./README.md#O-Projet-4:-Multi-mode-counter)
 ![Simulácia](IMGs/schema_vivado.png)
 
 ## Implemented Design
+- [Projekt 4: Multi-mode counter](./README.md#O-Projet-4:-Multi-mode-counter)
+  
 ![Simulácia](IMGs/ImplementedDesign.png)
 
 ## Simulace 
+- [Projekt 4: Multi-mode counter](./README.md#O-Projet-4:-Multi-mode-counter)
 ![Simulácia](IMGs/simulace.png)
 
 ![Simulácia](IMGs/simulacia2.png)
@@ -50,8 +55,11 @@
 ![Simulácia](IMGs/simulacia3.png)
 
 ## Video 
+- [Projekt 4: Multi-mode counter](./README.md#O-Projet-4:-Multi-mode-counter)
 
 ## Vstupy a vystupy   
+- [Projekt 4: Multi-mode counter](./README.md#O-Projet-4:-Multi-mode-counter)
+  
 - `SW(0)` - zapnutí/vypnutí čítače
 - `SW(1)` - přepínač směru změny módů (nahoru, dolů)
 - `clk` - hodinový signál  (100 Mhz)
@@ -63,6 +71,8 @@
 - `DP` - desetinná tečka (svítí/nesvítí)
 
 ## Importovane Subory
+- [Projekt 4: Multi-mode counter](./README.md#O-Projet-4:-Multi-mode-counter)
+  
 - clk_en.vhd
 - counter.vhd
 - debounce.vhd
@@ -73,6 +83,8 @@
 - manualne zadanie začiatočneho bitu pomocou switchov
 
 ## Reference
+- [Projekt 4: Multi-mode counter](./README.md#O-Projet-4:-Multi-mode-counter)
+  
 - ChatGPT/Claude AI na omptimalizaci kodu a pomoc při potížích a implementaci kódu, když jsme nevědeli jak dal.
 - [Online VHDL Testbench Template Generator](https://vhdl.lapinoo.net/)
 - [Nexys A7 Digilent Reference](https://digilent.com/reference/programmable-logic/nexys-a7/start)
