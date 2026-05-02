@@ -10,6 +10,8 @@
 - [Vstupy a vystupy](./README.md#Vstupy-a-vystupy)
 - [Importovane Subory](./README.md#Importovane-Subory)
 - [Reference](./README.md#Reference)
+## Poster 
+![Simulacia](IMGs/Poster.png)
 # O Projektu
 - projekt na základě přepínačů, zobrazuje na displeji hodnoty/text dle vybraného módu.
 - `debounce` - umožňuje spolehlivé stisknutí tlačítka (zákmity ignorovány)
@@ -74,11 +76,8 @@
 - debounce.vhd
 - display_driver.vhd
 
-## Napady na vylepšenie
-- zvyšenie rychlosti
-- manualne zadanie začiatočneho bitu pomocou switchov
-
 ## Reference
 - ChatGPT/Claude AI na omptimalizaci kodu a pomoc při potížích a implementaci kódu, když jsme nevědeli jak dal.
+- ChatGPT na vygenerovanie posteru.
 - [Online VHDL Testbench Template Generator](https://vhdl.lapinoo.net/)
 - [Nexys A7 Digilent Reference](https://digilent.com/reference/programmable-logic/nexys-a7/start)
