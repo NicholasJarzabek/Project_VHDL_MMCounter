@@ -11,7 +11,7 @@
 - [Importovane Subory](./README.md#Importovane-Subory)
 - [Reference](./README.md#Reference)
 ## Poster 
-![Simulacia](IMGs/Poster.png)
+![Simulacia](IMGs/Poster_final.png)
 # O Projektu
 - projekt na základě přepínačů, zobrazuje na displeji hodnoty/text dle vybraného módu.
 - `debounce` - umožňuje spolehlivé stisknutí tlačítka (zákmity ignorovány)
