@@ -37,11 +37,8 @@
 ## Blokove schema
 
   
-<img width="1687" height="533" alt="image" src="https://github.com/NicholasJarzabek/Project_VHDL_MMCounter/blob/main/IMGs/schema.png" />
+![Simulácia](IMGs/schema_new.png)
 
-## Blokove schema generovane Vivadom
-
-![Simulácia](IMGs/schema_vivado.png)
 
 ## Implemented Design
   
