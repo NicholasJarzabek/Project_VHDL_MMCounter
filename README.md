@@ -1,4 +1,4 @@
-# Projekt 4: Multi-mode counter
+# Project 4: Multi-mode counter
 * Autors: Nicholas Jarzabek, Vaclav Javurek, David Kevely
 - [O projektu](./README.md#O-Projektu)
 - [Popis funkčnosti tlačidiel](./README.md#Popis-funkčnosti-tlačidiel)
