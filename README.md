@@ -20,6 +20,24 @@
 - `bin2seg` - Translates 4-bit binary/hexadecimal values into the specific LED segment patterns required to display characters (0-9, A-F).
 - `display driver` - Handles the rapid multiplexing (switching between anodes) required to show different numbers on all 8 digits of the 7-segment display simultaneously without flickering.
 
+## input/output 
+- BTNC: Resets the entire system. It forces the counter back to 0 and resets the display mode to Decimal.
+- BTNR: Cycles through the three display modes in this order: Decimal=>Hexadecimal=>text  back to Decimal.
+- BTNL: Toggles the automatic counting on or off (Run/Pause).
+- BTNU: Triggers a single, manual step of the counter (useful when auto-counting is paused).
+- BTND: Loads an external 8-bit value directly into the counter from the upper switches.
+
+- SW[0]: Sets the counting direction (0 = count up, 1 = count down).
+- SW[3:2]: Selects the automatic counting speed. There are four speed tiers ranging from the slowest (00) to the fastest (11).
+- SW[7:4]: Sets the step size for the counter (from 1 to 15). If all four switches are down (0000), the system defaults to a step size of 1.
+- SW[15:8]: Acts as an 8-bit loadable data vector. When BTND is pressed, the binary value set on these switches is pushed into the counter.
+  
+- `clk` - clock signal  (100 Mhz)
+- `AN` - anode
+- `SEG` - segments
+- `LED` - LED
+- `DP` - Decimal Point
+
 ## Display Modes
 - Mode 0 (Decimal): Converts the binary counter into a standard base-10 number, displaying values from 00000000 to 00065535.
 - Mode 1 (Hexadecimal): Displays the raw 16-bit counter value in base-16, showing values from 00000000 to 0000FFFF.
@@ -46,23 +64,7 @@
 ## Video 
 
 
-## input/output 
-- BTNC: Resets the entire system. It forces the counter back to 0 and resets the display mode to Decimal.
-- BTNR: Cycles through the three display modes in this order: Decimal=>Hexadecimal=>text  back to Decimal.
-- BTNL: Toggles the automatic counting on or off (Run/Pause).
-- BTNU: Triggers a single, manual step of the counter (useful when auto-counting is paused).
-- BTND: Loads an external 8-bit value directly into the counter from the upper switches.
 
-- SW[0]: Sets the counting direction (0 = count up, 1 = count down).
-- SW[3:2]: Selects the automatic counting speed. There are four speed tiers ranging from the slowest (00) to the fastest (11).
-- SW[7:4]: Sets the step size for the counter (from 1 to 15). If all four switches are down (0000), the system defaults to a step size of 1.
-- SW[15:8]: Acts as an 8-bit loadable data vector. When BTND is pressed, the binary value set on these switches is pushed into the counter.
-  
-- `clk` - clock signal  (100 Mhz)
-- `AN` - anode
-- `SEG` - segments
-- `LED` - LED
-- `DP` - Decimal Point
 
 ## Imported files 
 - clk_en.vhd
