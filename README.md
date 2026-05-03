@@ -12,29 +12,21 @@
 - [Reference](./README.md#Reference)
 ## Poster 
 ![Simulacia](IMGs/Poster.png)
-# O Projektu
-- projekt na základě přepínačů, zobrazuje na displeji hodnoty/text dle vybraného módu.
-- `debounce` - umožňuje spolehlivé stisknutí tlačítka (zákmity ignorovány)
-- `counter` - přiřazuje vybraným switchům bin. hodnoty
-- `bin2seg` - přiřazuje bin. hodnotám  hodnoty, které chceme zobrazit, dle vybraného módu (1,2,3...,A,B...,F, nebo text, což pro ten mód přiřadíme více písmen)
-- `bin2seg` - dle módu  a vst. z clk_en určí, které části segmentovek budou zhasnuty a rozsvíceny
-- `display driver` - přepíná mezi řády (10 vs 1)
+# Project Overview
+- Purpose: An FPGA-based 16-bit counter controlled via buttons and switches, displaying real-time values on an 8-digit 7-segment display and 16 LEDs.
+- `debounce` - Ensures reliable button presses by filtering out mechanical switch bouncing, so one physical press equals exactly one logic pulse.
+- `Clock Enable` - Generates timing pulses from the main 100MHz clock to control the speed of the automatic counting.
+- `MMCounter` - The top-level module that ties the inputs (buttons/switches) to the counter logic and routes the formatted data to the displays.
+- `bin2seg` - Translates 4-bit binary/hexadecimal values into the specific LED segment patterns required to display characters (0-9, A-F).
+- `display driver` - Handles the rapid multiplexing (switching between anodes) required to show different numbers on all 8 digits of the 7-segment display simultaneously without flickering.
 
-## Popis funkčnosti tlačidiel 
-- změna módů, tlačítkem BTNR přepínáme multiplexer mezi módem 0,1,2->0,1,2, případně opačným směrem)
-- sw(0) zapíná/vypíná čítač.
-- sw(1) mění směr změny módů
-- BTNC reset čítače
-- mód 0 (hex) normálně zobrazujeme 0 až F
-- mód 1 (dec) výst. omezen na 0 až 9
-- mód 2 (text) Do displeje vchází pouze písmena, jejich "překlad" z clk_en signálu na písmena je v blocku counter v sekci "mod 2"
+## Display Modes
+- Mode 0 (Decimal): Converts the binary counter into a standard base-10 number, displaying values from 00000000 to 00065535.
+- Mode 1 (Hexadecimal): Displays the raw 16-bit counter value in base-16, showing values from 00000000 to 0000FFFF.
+- Mode 2 (Scroll text): A custom visual mode that displays a shifting "DE1" text pattern across the 7-segment display, animated by the current counter value.
 
 
-
-- `bin2seg` -dle módu  a vst. z clk_en určí, které části segmentovek budou zhasnuty a rozsvíceny
-- `display driver` - přepíná mezi řády (10 vs 1)
-
-## Blokove schema
+## Block diagram
 
   
 ![Simulácia](IMGs/schema_new.png)
@@ -44,7 +36,7 @@
   
 ![Simulácia](IMGs/ImplementedDesign.png)
 
-## Simulace 
+## Simulations
 ![Simulácia](IMGs/simulace.png)
 
 ![Simulácia](IMGs/simulacia2.png)
@@ -54,26 +46,31 @@
 ## Video 
 
 
-## Vstupy a vystupy   
+## input/output 
+- BTNC: Resets the entire system. It forces the counter back to 0 and resets the display mode to Decimal.
+- BTNR: Cycles through the three display modes in this order: Decimal=>Hexadecimal=>text  back to Decimal.
+- BTNL: Toggles the automatic counting on or off (Run/Pause).
+- BTNU: Triggers a single, manual step of the counter (useful when auto-counting is paused).
+- BTND: Loads an external 8-bit value directly into the counter from the upper switches.
 
+- SW[0]: Sets the counting direction (0 = count up, 1 = count down).
+- SW[3:2]: Selects the automatic counting speed. There are four speed tiers ranging from the slowest (00) to the fastest (11).
+- SW[7:4]: Sets the step size for the counter (from 1 to 15). If all four switches are down (0000), the system defaults to a step size of 1.
+- SW[15:8]: Acts as an 8-bit loadable data vector. When BTND is pressed, the binary value set on these switches is pushed into the counter.
   
-- `SW(0)` - zapnutí/vypnutí čítače
-- `SW(1)` - přepínač směru změny módů (nahoru, dolů)
-- `clk` - hodinový signál  (100 Mhz)
-- `BTNC` - tlačítko čítače (reset)
-- `BTNR` - mění módy směrem určeným SW(1)
-- `AN` - anoda
-- `SEG` -  segmentovka (které části segmentů svítí/nesvítí)
-- `LED` - ledka (svítí/nesvítí)
-- `DP` - desetinná tečka (svítí/nesvítí)
+- `clk` - clock signal  (100 Mhz)
+- `AN` - anode
+- `SEG` - segments
+- `LED` - LED
+- `DP` - Decimal Point
 
-## Importovane Subory 
+## Imported files 
 - clk_en.vhd
 - counter.vhd
 - debounce.vhd
 - display_driver.vhd
 
 ## Reference
-- ChatGPT/Claude AI na omptimalizaci kodu a pomoc při potížích a implementaci kódu, když jsme nevědeli jak dal.
+- ChatGPT / Claude AI for code optimization, troubleshooting, and implementation assistance when we were stuck.
 - [Online VHDL Testbench Template Generator](https://vhdl.lapinoo.net/)
 - [Nexys A7 Digilent Reference](https://digilent.com/reference/programmable-logic/nexys-a7/start)
