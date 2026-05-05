@@ -47,9 +47,21 @@
 
 ## Block diagram
 
+
   
 ![Simulácia](IMGs/schema_new.png)
 
+## System Architecture
+- `debounce` To ensure stable operation on physical hardware, all button inputs (BTNC through BTND) pass through dedicated Debounce modules.
+- `Clock Enable Generators` This module is made of Clock Enable generators chosen with switches (1s,0.5s, 0.25s, 0.1s)
+- `Mode Control` Processes button presses to toggle between different operational modes
+- `Step Size` controls step size via switches and run/pause of counting counter
+- `Speed Select Logic` depending on state of switches SW[3:2] controls 4:1 MUX
+- `Run/Pause Toggle`  acts as the "Start/Stop" switch for the counter via button.
+- `4:1 MUX (Multiplexer)` selects one Clock Enable Generator via switches
+- GAME `(Counter + Control)` brain, holds all the information and combines for function
+- `Display Formatter` prepares data for 7-segment display depends on mode chosen
+- `Display Driver` Sends corresponding segment patterns on display
 
 ## Implemented Design
   
