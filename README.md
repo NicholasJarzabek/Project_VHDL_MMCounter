@@ -63,6 +63,34 @@
 - `Display Formatter` prepares data for 7-segment display depends on mode chosen
 - `Display Driver` Sends corresponding segment patterns on display
 
+## Signals
+## External signals
+- `clk` Master system clock,keeps the entire system synchronized.
+- `BTNX` un_debaunced electrical signals from buttons
+- `SW[15:0]` The raw 16-bit bus representing all 16 physical slide switches split up and routed to the Step Size module, Speed Select module, Clock Enable Generators, and directly into the GAME module.
+## Debounce signals
+These modules take the raw button inputs and output clean digital signals
+- `rst_state & rst_press` from BTNC:`rst_state` reset if button held(to first mode), `rst_press` zeroes display
+- `mode_state & mode_press` holds information about current mode state and with press of BTNR changes mode
+- `run_press` toggle switch for Run/Pause=> BTNL
+- `step_state & step_press`  BTNU=> The state and pulse signals for the manual step button
+- `load_state & load_press` BTND=> Loads set number and holds information about set ammount via SW[15:7]
+## User Interface signals
+- `mode_reg[1:0]` holds current mode(Dec/Hex/Text/)
+- `run_reg` run/pause for counting
+- `step_size[15:0]` step size chosen with SW[7:4]
+- `sw_s[1:0]` choice of speed pulse let through 4:1 MUX
+## Timing Generation signal
+-  `ce0, ce1, ce2, ce3` Clock enable generators
+-  `tick` single chosen timing from Clock enable generator
+##  GAME Module signals
+-  `count_val[15:0]` mathematical value of current count
+-  `led[15:0]` output for LEDs (High/Low)
+##  Display signals
+-  `digits_8x4[31:0]` A 32-bit bus containing eight individual 4-bit numbers
+-  `seg[6:0]` lights up the A through G segments on the  7-segment display.
+-  `an[7:0]` The 8 hardware pins (anodes) that quickly turn the individual 8 digits on and off for multiplexing.
+-  `dp` Controls decimal point on display
 ## Implemented Design
   
 ![Simulácia](IMGs/ImplementedDesign.png)
