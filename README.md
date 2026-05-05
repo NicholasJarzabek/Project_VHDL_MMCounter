@@ -59,7 +59,7 @@
 - `Speed Select Logic` depending on state of switches SW[3:2] controls 4:1 MUX
 - `Run/Pause Toggle`  acts as the "Start/Stop" switch for the counter via button.
 - `4:1 MUX (Multiplexer)` selects one Clock Enable Generator via switches
-- GAME `(Counter + Control)` brain, holds all the information and combines for function
+- `GAME (Counter + Control)` brain, holds all the information and combines for function
 - `Display Formatter` prepares data for 7-segment display depends on mode chosen
 - `Display Driver` Sends corresponding segment patterns on display
 
