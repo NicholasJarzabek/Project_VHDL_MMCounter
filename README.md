@@ -1,14 +1,15 @@
 # Project 4: Multi-mode counter
 * Autors: Nicholas Jarzabek, Vaclav Javurek, David Kevely
-- [O projektu](./README.md#O-Projektu)
-- [Popis funkčnosti tlačidiel](./README.md#Popis-funkčnosti-tlačidiel)
-- [Blokove schema](./README.md#Blokove-schema)
-- [Blokove schema generovane Vivadom](./README.md#Blokove-schema-generovane-Vivadom)
+- [Project Overview](./README.md#O-Project-Overview)
+- [input/output](./README.md#input/output)
+- [Display Modes](./README.md#Display-Modes)
+- [Block diagram](./README.md#Block-diagram)
 - [Implemented Design](./README.md#Implemented-design)
-- [Simulace](./README.md#Simulace)
+- [Simulations](./README.md#Simulation-1)
 - [Video of Functionality](https://drive.google.com/file/d/1VYxotUysiJ_GsMJ7Ut3g0ljJxdD-CJsK/view?usp=sharing) 
-- [Vstupy a vystupy](./README.md#Vstupy-a-vystupy)
-- [Importovane Subory](./README.md#Importovane-Subory)
+- [I/O](./README.md#Vstupy-a-vystupy)
+- [Resources](./README.md#Resources)
+- [Imported Files](./README.md#Importovane-Subory)
 - [Reference](./README.md#Reference)
 ## Poster 
 ![Simulacia](IMGs/MultiMode_Counter_A3_Final_Realigned-1.png)
@@ -152,7 +153,14 @@ Display Outputs:
 ![Simulácia](IMGs/simulacia51.png)
 ![Simulácia](IMGs/simulacia52.png)
 
+## Resources
+- Post-Implementation table
 
+![Simulácia](IMGs/post_imp.png)
+
+- Post-Synthesis table
+
+![Simulácia](IMGs/post_synth.png)
 
 ## Imported files 
 - clk_en.vhd
