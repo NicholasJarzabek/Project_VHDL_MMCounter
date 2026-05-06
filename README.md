@@ -123,15 +123,15 @@ A stable clock signal (`clk`) with a regular periodic waveform is visible on the
 
 Display Outputs:
 
-`AN` = FE – Only one display digit is active.
+- `AN` = FE – Only one display digit is active.
 
-`SEG` – Switches dynamically (segment multiplexing), with individual bits changing rapidly.
+- `SEG` – Switches dynamically (segment multiplexing), with individual bits changing rapidly.
 
-LED Output (`LED[15:0]`) displays the binary value of the counter:
+- LED Output (`LED[15:0]`) displays the binary value of the counter:
 
-Primarily the lower bits change (`LED(0)` through `LED(4)`).
+- Primarily the lower bits change (`LED(0)` through `LED(4)`).
 
-The higher bits remain zero.
+- The higher bits remain zero.
 
 ![Simulácia](IMGs/simulacia3.png)
 
