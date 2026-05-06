@@ -100,9 +100,9 @@ These modules take the raw button inputs and output clean digital signals
 ![Simulácia](IMGs/ImplementedDesign.png)
 
 ## Simulations
-![Simulácia](IMGs/simulace.png)
 
-- `Simulation 2`
+
+- `Simulation 1`
 - A correctly generated clock signal (`clk`) with a regular periodic waveform is visible on the simulation chart.
 
 - The input bus `SW[15:0]` changes during the simulation (e.g., `0000` → `0004` → `0008` → `000E` → `002C` → `AA2C`), with individual bits toggling as expected.
@@ -117,7 +117,7 @@ These modules take the raw button inputs and output clean digital signals
 
 ![Simulácia](IMGs/simulacia2.png)
 
-- `Simulation 3`
+- `Simulation 2`
 
 A stable clock signal (`clk`) with a regular periodic waveform is visible on the waveform. The button signals (`BTNL`, `BTNU`, `BTND`) contain short pulses occurring at various points in time.
 
