@@ -101,6 +101,17 @@ These modules take the raw button inputs and output clean digital signals
 
 ## Simulations
 ![Simulácia](IMGs/simulace.png)
+- A correctly generated clock signal (`clk`) with a regular periodic waveform is visible on the simulation chart.
+
+- The input bus `SW[15:0]` changes during the simulation (e.g., `0000` → `0004` → `0008` → `000E` → `002C` → `AA2C`), with individual bits toggling as expected.
+
+- The button signals (`BTNC`, `BTNR`, `BTNL`, `BTNU`, `BTND`) contain short pulses.
+
+- Outputs:
+- `AN` = FE – Only one display digit is active.
+- `SEG` = 01 – Constant segment pattern.
+- `LED` = 0000 – No change throughout the entire simulation.
+- `DP` = 1 – The decimal point is turned off.
 
 ![Simulácia](IMGs/simulacia2.png)
 
