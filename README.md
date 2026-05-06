@@ -52,7 +52,7 @@
 
 
   
-![Simulácia](IMGs/schema_final_final.png)
+![Simulácia](IMGs/schema_final_final_final.png)
 
 ## System Architecture
 - `debounce` To ensure stable operation on physical hardware, all button inputs (BTNC through BTND) pass through dedicated Debounce modules.
