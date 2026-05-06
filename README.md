@@ -99,10 +99,8 @@ These modules take the raw button inputs and output clean digital signals
   
 ![Simulácia](IMGs/ImplementedDesign.png)
 
-## Simulations
+## Simulation 1
 
-
-- `Simulation 1`
 - A correctly generated clock signal (`clk`) with a regular periodic waveform is visible on the simulation chart.
 
 - The input bus `SW[15:0]` changes during the simulation (e.g., `0000` → `0004` → `0008` → `000E` → `002C` → `AA2C`), with individual bits toggling as expected.
@@ -117,7 +115,7 @@ These modules take the raw button inputs and output clean digital signals
 
 ![Simulácia](IMGs/simulacia2.png)
 
-- `Simulation 2`
+## Simulation 2 (
 
 A stable clock signal (`clk`) with a regular periodic waveform is visible on the waveform. The button signals (`BTNL`, `BTNU`, `BTND`) contain short pulses occurring at various points in time.
 
@@ -134,6 +132,26 @@ Display Outputs:
 - The higher bits remain zero.
 
 ![Simulácia](IMGs/simulacia3.png)
+
+## Simulation 3 (bin2seg)
+
+- The simulation verifies the correct functionality of the `bin2seg` module by applying all hexadecimal input values from `0` to `F` to the `bin[3:0]` input.
+- For each input combination, the corresponding seven-segment output `seg[6:0]` changes according to the expected segment pattern.
+- The waveform confirms that the decoder correctly converts 4-bit binary and hexadecimal values into seven-segment display signals.
+- Individual segment lines toggle as expected for each displayed symbol, demonstrating proper operation of the hexadecimal-to-7-segment conversion logic.
+
+![Simulácia](IMGs/simulacia4.png)
+
+## Simulation 4 (display_driver)
+
+- The simulation demonstrates the functionality of the `display_driver` module for an 8-digit seven-segment display. 
+- Different 32-bit hexadecimal values were sequentially applied to the `value[31:0]` input, including `12345678`, `87654321`, `ABCDEF00`, `DEADBEEF`, `CAFEBABE`, `FFFFFFFF`, and `11111111`. 
+- The waveform shows corresponding changes on the `seg[6:0]` outputs, confirming correct conversion of hexadecimal digits into seven-segment display patterns.
+- The clock signal continuously drives the multiplexing process, while the reset signal initializes the module at the beginning of the simulation.
+- The `anode[7:0]` output controls the currently active display digit, demonstrating the multiplexed operation of the display driver. Changes in both segment outputs and internal display data confirm proper processing of multiple display patterns and successful operation of the display control logic.
+
+![Simulácia](IMGs/simulacia51.png)
+![Simulácia](IMGs/simulacia52.png)
 
 ## [Video of Functionality](https://drive.google.com/file/d/1VYxotUysiJ_GsMJ7Ut3g0ljJxdD-CJsK/view?usp=sharing) 
 
