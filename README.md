@@ -106,7 +106,7 @@ These modules take the raw button inputs and output clean digital signals
 
 ![Simulácia](IMGs/simulacia3.png)
 
-## Video 
+## [Video of Functionality](https://drive.google.com/file/d/1VYxotUysiJ_GsMJ7Ut3g0ljJxdD-CJsK/view?usp=sharing) 
 
 
 
