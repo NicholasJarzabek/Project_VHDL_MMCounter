@@ -1,6 +1,6 @@
 # Project 4: Multi-mode counter
 * Autors: Nicholas Jarzabek, Vaclav Javurek, David Kevely
-- [Project Overview](./README.md#O-Project-Overview)
+- [Project Overview](./README.md#Project-Overview)
 - [input & output](./README.md#input-output)
 - [Display Modes](./README.md#Display-Modes)
 - [Block diagram](./README.md#Block-diagram)
