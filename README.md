@@ -13,10 +13,10 @@
 - [Reference](./README.md#Reference)
 ## Poster 
 ![Simulacia](IMGs/Poster.png)
--`Switches and Buttons` => input
--`Debounce and Clock gen` => Debounce modules and clock generators
--`16-Bit Counter and Control` => contains Step size, Speed select,Run/Pause select, Mode Control, GAME (Counter+Control)
--`Display / LEDs` => Display Formatter and Display Driver
+- `Switches and Buttons` => input
+- `Debounce and Clock gen` => Debounce modules and clock generators
+- `16-Bit Counter and Control` => contains Step size, Speed select,Run/Pause select, Mode Control, GAME (Counter+Control)
+- `Display / LEDs` => Display Formatter and Display Driver
 # Project Overview
 - Purpose: An FPGA-based 16-bit counter controlled via buttons and switches, displaying real-time values on an 8-digit 7-segment display and 16 LEDs.
 - `debounce` - Ensures reliable button presses by filtering out mechanical switch bouncing, so one physical press equals exactly one logic pulse.
