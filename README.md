@@ -6,7 +6,7 @@
 - [Blokove schema generovane Vivadom](./README.md#Blokove-schema-generovane-Vivadom)
 - [Implemented Design](./README.md#Implemented-design)
 - [Simulace](./README.md#Simulace)
-- [Video](./README.md#Video)
+- [Video of Functionality](./README.md#Video)
 - [Vstupy a vystupy](./README.md#Vstupy-a-vystupy)
 - [Importovane Subory](./README.md#Importovane-Subory)
 - [Reference](./README.md#Reference)
