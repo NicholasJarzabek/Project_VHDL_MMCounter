@@ -11,7 +11,7 @@
 - [Importovane Subory](./README.md#Importovane-Subory)
 - [Reference](./README.md#Reference)
 ## Poster 
-![Simulacia](IMGs/Poster.png)
+![Simulacia](IMGs/MultiMode_Counter_A3_Final_Realigned-1.png)
 - `Switches and Buttons` => input
 - `Debounce and Clock gen` => Debounce modules and clock generators
 - `16-Bit Counter and Control` => contains Step size, Speed select,Run/Pause select, Mode Control, GAME (Counter+Control)
