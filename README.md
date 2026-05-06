@@ -6,7 +6,7 @@
 - [Blokove schema generovane Vivadom](./README.md#Blokove-schema-generovane-Vivadom)
 - [Implemented Design](./README.md#Implemented-design)
 - [Simulace](./README.md#Simulace)
-- [Video of Functionality](./README.md#Video)
+- [Video of Functionality](https://drive.google.com/file/d/1VYxotUysiJ_GsMJ7Ut3g0ljJxdD-CJsK/view?usp=sharing) 
 - [Vstupy a vystupy](./README.md#Vstupy-a-vystupy)
 - [Importovane Subory](./README.md#Importovane-Subory)
 - [Reference](./README.md#Reference)
@@ -151,9 +151,6 @@ Display Outputs:
 
 ![Simulácia](IMGs/simulacia51.png)
 ![Simulácia](IMGs/simulacia52.png)
-
-## [Video of Functionality](https://drive.google.com/file/d/1VYxotUysiJ_GsMJ7Ut3g0ljJxdD-CJsK/view?usp=sharing) 
-
 
 
 
