@@ -1,13 +1,13 @@
 # Project 4: Multi-mode counter
 * Autors: Nicholas Jarzabek, Vaclav Javurek, David Kevely
 - [Project Overview](./README.md#O-Project-Overview)
-- [input & output](./README.md#input-&-output)
+- [input & output](./README.md#input-output)
 - [Display Modes](./README.md#Display-Modes)
 - [Block diagram](./README.md#Block-diagram)
 - [Implemented Design](./README.md#Implemented-design)
 - [Simulations](./README.md#Simulation-1)
 - [Video of Functionality](https://drive.google.com/file/d/1VYxotUysiJ_GsMJ7Ut3g0ljJxdD-CJsK/view?usp=sharing) 
-- [I/O](./README.md#Vstupy-a-vystupy)
+- [Signals](./README.md#Signals)
 - [Resources](./README.md#Resources)
 - [Imported Files](./README.md#Importovane-Subory)
 - [Reference](./README.md#Reference)
@@ -25,7 +25,7 @@
 - `bin2seg` - Translates 4-bit binary/hexadecimal values into the specific LED segment patterns required to display characters (0-9, A-F).
 - `display driver` - Handles the rapid multiplexing (switching between anodes) required to show different numbers on all 8 digits of the 7-segment display simultaneously without flickering.
 
-## input & output 
+## input-output 
 - `BTNC`: Resets the entire system. It forces the counter back to 0 and resets the display mode to Decimal.
 - `BTNR`: Cycles through the three display modes in this order: Decimal=>Hexadecimal=>text  back to Decimal.
 - `BTNL`: Toggles the automatic counting on or off (Run/Pause).
