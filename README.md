@@ -1,6 +1,5 @@
 # Project 4: Multi-mode counter
 * Autors: Nicholas Jarzabek, Vaclav Javurek, David Kevely
-* [Video of functionality](https://drive.google.com/file/d/1VYxotUysiJ_GsMJ7Ut3g0ljJxdD-CJsK/view?usp=sharing) 
 - [O projektu](./README.md#O-Projektu)
 - [Popis funkčnosti tlačidiel](./README.md#Popis-funkčnosti-tlačidiel)
 - [Blokove schema](./README.md#Blokove-schema)
@@ -53,7 +52,7 @@
 
 
   
-![Simulácia](IMGs/schema_new.png)
+![Simulácia](IMGs/schema_final_final.png)
 
 ## System Architecture
 - `debounce` To ensure stable operation on physical hardware, all button inputs (BTNC through BTND) pass through dedicated Debounce modules.
