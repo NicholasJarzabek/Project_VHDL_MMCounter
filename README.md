@@ -118,6 +118,6 @@ These modules take the raw button inputs and output clean digital signals
 - display_driver.vhd
 
 ## Reference
-- ChatGPT / Claude AI for code optimization, troubleshooting, and implementation assistance when we were stuck.
+- ChatGPT / Claude AI for code optimization, troubleshooting, and implementation assistance when we were stuck, gemini used for general structure of poster.
 - [Online VHDL Testbench Template Generator](https://vhdl.lapinoo.net/)
 - [Nexys A7 Digilent Reference](https://digilent.com/reference/programmable-logic/nexys-a7/start)
