@@ -1,4 +1,8 @@
 # Project 4: Multi-mode counter
+
+- *Please use the latest version of the project files. After additional investigation and discussion with AI tools, we discovered an issue in the constrain file, which has now been corrected.*
+
+  
 * Autors: Nicholas Jarzabek, Vaclav Javurek, David Kevely
 - [Project Overview](./README.md#Project-Overview)
 - [input & output](./README.md#input-output)
