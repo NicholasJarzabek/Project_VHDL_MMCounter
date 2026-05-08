@@ -60,5 +60,18 @@ set_property -dict { PACKAGE_PIN K2 IOSTANDARD LVCMOS33 } [get_ports { AN[6] }]
 set_property -dict { PACKAGE_PIN U13 IOSTANDARD LVCMOS33 } [get_ports { AN[7] }]
 
 ## Buttons
-set_property -dict { PACKAGE_PIN N17 IOSTANDARD LVCMOS33 } [get_ports { BTNC }]
-set_property -dict { PACKAGE_PIN M17 IOSTANDARD LVCMOS33 } [get_ports { BTNR }]
+
+set_property PACKAGE_PIN N17 [get_ports BTNC]
+set_property IOSTANDARD LVCMOS33 [get_ports BTNC]
+
+set_property PACKAGE_PIN M18 [get_ports BTNU]
+set_property IOSTANDARD LVCMOS33 [get_ports BTNU]
+
+set_property PACKAGE_PIN P17 [get_ports BTNL]
+set_property IOSTANDARD LVCMOS33 [get_ports BTNL]
+
+set_property PACKAGE_PIN M17 [get_ports BTNR]
+set_property IOSTANDARD LVCMOS33 [get_ports BTNR]
+
+set_property PACKAGE_PIN P18 [get_ports BTND]
+set_property IOSTANDARD LVCMOS33 [get_ports BTND]]
